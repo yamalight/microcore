@@ -1,0 +1,24 @@
+{
+  "name": "microcore",
+  "version": "0.1.0",
+  "description": "Core library for creation of pipelining microservices",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test tap --cov --coverage-report=lcov --reporter=spec ./test/index.js",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "rabbit:start": "docker run -d --name mircocore-rabbit -p 5672:5672 -p 8081:15672 rabbitmq:management",
+    "rabbit:clean": "docker stop mircocore-rabbit && docker rm mircocore-rabbit",
+    "rabbit:restart": "npm run rabbit:clean && npm run rabbit:start"
+  },
+  "author": "Tim Ermilov <yamalight@gmail.com> (http://codezen.net)",
+  "license": "MIT",
+  "dependencies": {
+    "microwork": "^0.12.0",
+    "serialize-error": "^2.1.0",
+    "winston": "^2.3.0"
+  },
+  "devDependencies": {
+    "coveralls": "^2.13.1",
+    "tap": "^10.0.0"
+  }
+}
