@@ -9,3 +9,12 @@ cache: yarn
 
 after_success:
 - yarn coveralls
+
+deploy:
+  provider: npm
+  email: yamalight@gmail.com
+  api_key:
+    secure: JsUrnSZI73SgVWqj1skKeTFjl0Qne0HLFY+Z0/k74O1y/c9+khO3vkOu4DAY8/aYtRip9jQezPp8Jpx+7Uq2Q+OioEanifbA63Ov4wOC5GIn4EZswxruMaXKQcUUkH9AV69UPGKtVfQ2TDd+ykzwlFuReeAiDnXJPYedGKXm850BmYbpNCt+JUq0GYjrZel4IORtQ4J+bds8BqhQeiJM4jDt2QKVNIyf4jrG7G3XQQydnZ3eNM+O4TYsfbpCKsiQNopJiX6gtkf4+Lum35Eu1pOOnHskpYZAzzmj5yfhhAArG6cflibJbRMgQCfHRCxeargHrdrDNehu1jOaSLNNAu7wdtxlfNw6ZtxYS3mjLHsQSI5BwBRQbGYvfolfnpMmWpNJFBnpvcVZaQG3a8CqvG06GfP581Y9/qlYKsXfPcXoQVaZe4sNEFnXbdB0129rXS9Hy4uDUy9Gb7YNdqFCh/b3pImOynIuOBlHyTiNtIH0G+zJ/isMjBQXssK6y9VhnEbtDwyM1q4C7ugCWXfDVH+eNIbUMG5wiT4RU7XAVQZ6coM7V7eC0L9Zyz0wfQtA1I1CRVYo7ICJC4pKNnKw1YXSDeiGPZGMXkVYgj/GTsCAWw0NqnE0LbvGBsjbB8GoKKoIi0ntrDh3S9BtlRZRWMI4OewpRmZKQxuVeuFSYhc=
+  on:
+    tags: true
+    repo: yamalight/microcore
