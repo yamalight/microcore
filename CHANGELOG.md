@@ -1,5 +1,7 @@
+# 0.2.0 / 2018-10-01
 
-0.1.0 / 2017-09-14
-==================
+- Update dependencies
 
-  * Initial version with tests
+# 0.1.0 / 2017-09-14
+
+- Initial version with tests
