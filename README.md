@@ -1,15 +1,14 @@
-Microcore.js
-=========================
+# Microcore.js
 
 [![npm](https://img.shields.io/npm/v/microcore.svg)](https://www.npmjs.com/package/microcore)
 [![MIT](https://img.shields.io/npm/l/microcore.svg)](http://opensource.org/licenses/MIT)
 [![Build Status](https://travis-ci.org/yamalight/microcore.svg?branch=master)](https://travis-ci.org/yamalight/microcore)
-[![bitHound Overall Score](https://www.bithound.io/github/yamalight/microcore/badges/score.svg)](https://www.bithound.io/github/yamalight/microcore)
 [![Coverage Status](https://coveralls.io/repos/github/yamalight/microcore/badge.svg?branch=master)](https://coveralls.io/github/yamalight/microcore?branch=master)
 
 Microcore.js is a library for simple creation of pipelinening microservices in Node.js with RabbitMQ.
 
 # Installation
+
 ```sh
 npm install --save microcore
 ```
@@ -20,14 +19,15 @@ Since Microcore.js is written in ES6 and it uses async/await - it requires lates
 
 # Features
 
-* Simple interface for building pipelinening (micro)services
-* Easy way to scale services both horizontally (by adding more nodes) and vertically (by adding more subscribers)
+- Simple interface for building pipelinening (micro)services
+- Easy way to scale services both horizontally (by adding more nodes) and vertically (by adding more subscribers)
 
 # Usage
 
 ## Quick start
 
-Example service that subscribe to messages from `helloworld` topic and does some work with incoming data (in this case it just appends ` world!` to incoming string):
+Example service that subscribe to messages from `helloworld` topic and does some work with incoming data (in this case it just appends `world!` to incoming string):
+
 ```js
 const createService = require('microcore');
 
@@ -65,13 +65,14 @@ const shutdown = await createService({
 ```
 
 Example service that sends messages to `helloworld` and logs response to console:
+
 ```js
 const Microwork = require('microwork');
 
 // create master
 const master = new Microwork({host: 'rabbit', exchange: 'exchange'});
 // listen for reply from workers
-await master.subscribe('responsekey', (msg) => {
+await master.subscribe('responsekey', msg => {
   console.log(msg); // -> "hello world!"
 });
 // send message to workers
